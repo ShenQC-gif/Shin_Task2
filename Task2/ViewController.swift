@@ -22,27 +22,26 @@ class ViewController: UIViewController {
         let num1 = Double(textField1.text ?? "") ?? 0.0
         let num2 = Double(textField2.text ?? "") ?? 0.0
 
-        var result = Double()
+        var resultText = String()
 
         switch mark.selectedSegmentIndex {
         case 0:
-            result = num1 + num2
+            resultText = String(num1 + num2)
         case 1:
-            result = num1 - num2
+            resultText = String(num1 - num2)
         case 2:
-            result = num1 * num2
+            resultText = String(num1 * num2)
         case 3:
             if num2 == 0 {
                 resultLabel.text = "割る数には0以外を入力して下さい"
-                return
             } else {
-                result = num1 / num2
+                resultText = String(num1 / num2)
             }
         default:
             break
         }
 
-        resultLabel.text = "\(result)"
+        resultLabel.text = resultText
     }
 
 }
